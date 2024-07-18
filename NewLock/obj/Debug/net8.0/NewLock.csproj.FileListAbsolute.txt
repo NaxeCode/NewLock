@@ -28,3 +28,4 @@
 /Users/aladdinali/Github/DotNetProjects/NewAffordableLock/NewLock/obj/Debug/net8.0/NewLock.pdb
 /Users/aladdinali/Github/DotNetProjects/NewAffordableLock/NewLock/obj/Debug/net8.0/NewLock.genruntimeconfig.cache
 /Users/aladdinali/Github/DotNetProjects/NewAffordableLock/NewLock/obj/Debug/net8.0/ref/NewLock.dll
+/Users/aladdinali/Github/DotNetProjects/NewAffordableLock/NewLock/obj/Debug/net8.0/NewLock.sourcelink.json

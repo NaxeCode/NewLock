@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NewLock")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15b044711049580d8a3ec06e7ddc945265834d48")]
 [assembly: System.Reflection.AssemblyProductAttribute("NewLock")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NewLock")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

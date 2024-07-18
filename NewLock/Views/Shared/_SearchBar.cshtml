@@ -1,0 +1,8 @@
+@* Views/Shared/_SearchBar.cshtml *@
+
+<div class="search-bar">
+    <form asp-controller="Search" asp-action="Index" method="get">
+        <input type="text" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+</div>
