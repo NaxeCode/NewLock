@@ -10,6 +10,7 @@ builder.Services.AddSession();
 builder.Services.AddScoped<CartService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<StripeService>();
 
 
 var app = builder.Build();
