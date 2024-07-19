@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using NewLock.Services
+@inject ICartService CartService
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -34,6 +37,12 @@
                     <input type="text" name="query" placeholder="Search...">
                     <button type="submit">Search</button>
                 </form>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Cart" asp-action="Index">
+                        Cart
+                        <span class="badge bg-secondary">@await CartService.GetCartItemCountAsync()</span>
+                    </a>
+                </li>
             </div>
         </nav>
     </header>
