@@ -12,11 +12,8 @@ public class ProductRepository
 
         _products = new List<Product>
         {
-            new Product { Id = "1", Ez = "181301" , Name = "Grade 2 Entry Lever", Price = 49.99, Description = lever_description },
-            new Product { Id = "2", Ez = "181305" , Name = "Grade 2 Storeroom Lever", Price = 159.99, Description = lever_description},
-            new Product { Id = "3", Ez = "" , Name = "Padlock", Price = 15.99, Description = "Heavy-duty padlock for outdoor use"},
-            new Product { Id = "4", Ez = "" , Name = "Car Key Fob", Price = 79.99, Description = "Replacement key fob for vehicles"},
-            new Product { Id = "5", Ez = "" , Name = "Key Safe", Price = 39.99, Description = "Wall-mounted key safe for secure key storage"}
+            new Product { Id = "1", Ez = "181301" , Name = "Grade 2 Entry Lever", Price = 189.99, Description = lever_description },
+            new Product { Id = "2", Ez = "181305" , Name = "Grade 2 Storeroom Lever", Price = 189.99, Description = lever_description}
         };
     }
 
