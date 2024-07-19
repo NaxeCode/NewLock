@@ -47,5 +47,11 @@ namespace NewLock.Services
             var cart = GetCart();
             return cart.Items.Sum(item => item.Quantity);
         }
+
+        public void ClearCart()
+        {
+            var session = _httpContextAccessor.HttpContext.Session;
+            session.Remove(CartSessionKey);
+        }
     }
 }
