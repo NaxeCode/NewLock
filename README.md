@@ -4,32 +4,32 @@
 
 ---
 
-[X] Add Cart functionality.
-[X] Add payment processing with Stripe.
+- [x] Add Cart functionality.
+- [x] Add payment processing with Stripe.
 
 ## Header Todo:
 
 ---
 
-[ ] Remove Privacy, Home, and links on the header
-[ ] Add logo to header on the top-left.
-[ ] Add sign in / Account register.
-[ ] Add Icon on Cart button.
-[ ] Improve spacing on Cart button.
+- [ ] Remove Privacy, Home, and links on the header
+- [ ] Add logo to header on the top-left.
+- [ ] Add sign in / Account register.
+- [ ] Add Icon on Cart button.
+- [ ] Improve spacing on Cart button.
 
 ## Search Bar Todo:
 
 ---
 
-[ ] Remove search bar on home page.
-[ ] Style search bar on header better.
+- [ ] Remove search bar on home page.
+- [ ] Style search bar on header better.
 
 ## General Style guide Todo:
 
 ---
 
-[ ] Set background color to grey-black, with light text.
-[ ] Update font to use Poppins font.
+- [ ] Set background color to grey-black, with light text.
+- [ ] Update font to use Poppins font.
 
 ## Homepage Todo:
 
