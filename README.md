@@ -1,11 +1,11 @@
 # NewLock
 
-## Cart / Payment Todo:
+### Cart / Payment Todo:
 
 - [x] Add Cart functionality.
 - [x] Add payment processing with Stripe.
 
-## Header Todo:
+### Header Todo:
 
 - [ ] Remove Privacy, Home, and links on the header
 - [ ] Add logo to header on the top-left.
@@ -13,17 +13,17 @@
 - [ ] Add Icon on Cart button.
 - [ ] Improve spacing on Cart button.
 
-## Search Bar Todo:
+### Search Bar Todo:
 
 - [ ] Remove search bar on home page.
 - [ ] Style search bar on header better.
 
-## General Style guide Todo:
+### General Style guide Todo:
 
 - [ ] Set background color to grey-black, with light text.
 - [ ] Update font to use Poppins font.
 
-## Homepage Todo:
+### Homepage Todo:
 
 - [ ] Add simple image carousel
 - [ ] Add a "Shop by category" section that includes the following categories:
