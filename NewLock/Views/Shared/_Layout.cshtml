@@ -27,6 +27,10 @@
                 </form>
 
                 <li class="nav-item d-flex">
+                    <a class="nav-link" href="#"><i class="bi bi-person-bounding-box"></i> | Register</a>
+                </li>
+
+                <li class="nav-item d-flex">
                     <a class="nav-link text-dark" asp-controller="Cart" asp-action="Index">
                         <i class="bi bi-bag"></i> Cart |
                         <span class="badge bg-secondary">@await CartService.GetCartItemCountAsync()</span>
