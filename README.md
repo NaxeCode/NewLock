@@ -11,7 +11,7 @@
 
 ---
 
-- [ ] Remove Privacy, Home, and links on the header
+- [x] Remove Privacy, Home, and links on the header
 - [ ] Add logo to header on the top-left.
 - [ ] Add sign in / Account register.
 - [ ] Add Icon on Cart button.
