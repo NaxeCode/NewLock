@@ -12,9 +12,9 @@
 ---
 
 - [x] Remove Privacy, Home, and links on the header
-- [ ] Add logo to header on the top-left.
-- [ ] Add sign in / Account register.
-- [ ] Add Icon on Cart button.
+- [x] Add logo to header on the top-left.
+- [x] Add sign in / Account register.
+- [x] Add Icon on Cart button.
 - [ ] Improve spacing on Cart button.
 
 ### Search Bar Todo:
