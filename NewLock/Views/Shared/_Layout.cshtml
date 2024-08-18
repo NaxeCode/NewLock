@@ -20,29 +20,31 @@
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NewLock</a>
                 <!-- Replace line above with Affordable Lock Logo, Link to Home -->
-                <div class="input-group">
-                    <select class="form-select" id="inputGroupSelect01">
-                        <option selected>Categories</option>
-                        <option value="1">Automotive</option>
-                        <option value="2">Access Control</option>
-                        <option value="3">Toys</option>
-                    </select>
-                    <form class="d-flex w-50 flex-grow-1" asp-controller="Search" asp-action="Index" method="get">
+                <div class="input-group justify-content-center">
+                    <div class="flex-grow-4">
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>Categories</option>
+                            <option value="1">Automotive</option>
+                            <option value="2">Access Control</option>
+                            <option value="3">Toys</option>
+                        </select>
+                    </div>
+                    <form class="d-flex w-25" asp-controller="Search" asp-action="Index" method="get">
                         <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search"
                             aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
 
-
                 <li class="nav-item d-flex">
-                    <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Registration"><i
-                            class="bi bi-person-bounding-box"></i> | Register</a>
+                    <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Registration">
+                        <i class="bi bi-person-bounding-box"></i> | Register</a>
                 </li>
 
                 <li class="nav-item d-flex">
                     <a class="nav-link text-dark" asp-controller="Cart" asp-action="Index">
-                        <i class="bi bi-bag"></i> Cart |
+                        <i class="bi bi-bag"></i>
+                        Cart |
                         <span class="badge bg-secondary">@await CartService.GetCartItemCountAsync()</span>
                     </a>
                 </li>
