@@ -1,10 +1,10 @@
 :root {
 	--bg-color: #0b0405;
+	--bg-contrast-color: #1e1e1e;
 	--txt-color: #f6e9eb;
 	--primary-color: #e3939f;
 	--secondary-color: #941d2f;
 	--accent-color: #e53c55;
-	--navbar-color: #1e1e1e;
 }
 
 body {
