@@ -4,9 +4,11 @@
 	--primary-color: #e3939f;
 	--secondary-color: #941d2f;
 	--accent-color: #e53c55;
+	--navbar-color: #1e1e1e;
 }
 
 body {
+	font-family: 'Poppins', sans-serif;
 	background-color: var(--bg-color);
 	color: var(--txt-color);
 }
