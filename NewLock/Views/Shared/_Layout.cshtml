@@ -21,8 +21,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark mb-3"
-            style="background-color: var(--navbar-color);">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NewLock</a>
                 <!-- Replace line above with Affordable Lock Logo, Link to Home -->
@@ -55,7 +54,7 @@
                 </li>
 
                 <li class="nav-item d-flex">
-                    <a class="nav-link text-light" asp-controller="Cart" asp-action="Index">
+                    <a class="nav-link text-dark" asp-controller="Cart" asp-action="Index">
                         <i class="bi bi-bag"></i>
                         Cart |
                         <span class="badge bg-secondary">@await CartService.GetCartItemCountAsync()</span>
@@ -70,7 +69,7 @@
         </main>
     </div>
 
-    <footer class="footer text-muted" style="background-color: var(--bg-contrast-color);">
+    <footer class="footer text-muted">
         <div class="container">
             &copy; 2024 - NewLock - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
