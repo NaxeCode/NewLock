@@ -1,8 +1,11 @@
+using NewLock.Components;
 using NewLock.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ProductRepository>();
 builder.Services.AddHttpContextAccessor();
@@ -33,6 +36,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
 
 app.UseSession();
 
