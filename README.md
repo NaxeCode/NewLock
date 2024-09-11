@@ -21,6 +21,7 @@
 - [ ] Improve look, feel, and spacing of searched results.
 - [ ] Adjust Product Details Page.
 - [ ] Adjust Cart View to
+- [ ] 
 
 ### Version 0.1.0 Changelog:
 
