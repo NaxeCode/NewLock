@@ -1,6 +1,6 @@
 # NewLock
 
-### Version 0.2.0 Changelog:
+### Version 1.0.0 Changelog:
 
 ---
 
@@ -14,14 +14,30 @@
 
 ### Front-End Tasks [Low]:
 
-- [ ] Change Styling back to a lighter color, Make accents Redder.
+_Priority Tasks:_
+
+- [ ] Update header to match AffordableLock & Security main site with the following categories:
+- Logo
+- Home
+- Security Services in Florida
+- Locations:
+- Reviews
+- Blog
+- FAQs
+- Contact Us
+- Pay Now button
+- [ ] Implement Components
+- [ ] Add Video of Ken to site next to the Welcome component
+
+_Polish Tasks:_
+
+- [x] Change Styling back to a lighter color, Make accents Redder.
 - [ ] Update Link Colors to Reddish tint.
 - [ ] Add new Affordable Lock & Security Logo onto Header.
-- [ ] Make Carrousel on Homepage 25% smaller.
+- [ ] Remove Carrousel on Homepage
 - [ ] Improve look, feel, and spacing of searched results.
-- [ ] Adjust Product Details Page.
-- [ ] Adjust Cart View to
-- [ ] 
+- [ ] Adjust Product Details Page, inspired by Banner website.
+- [ ]
 
 ### Version 0.1.0 Changelog:
 
