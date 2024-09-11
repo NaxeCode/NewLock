@@ -1,7 +1,9 @@
-﻿@{
+﻿@using NewLock.Components;
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<component type="typeof(EmbeddedCounter)" render-mode="ServerPrerendered" />
 <div class="text-center">
     <h1 class="display-4">Search for your item</h1>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
