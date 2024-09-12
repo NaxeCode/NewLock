@@ -1,0 +1,56 @@
+﻿<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
+        <div class="container-fluid">
+            <!-- Affordable Lock Logo, Link to Home -->
+            <a class="navbar-brand" href="/">Affordable Lock</a>
+
+            <div class="input-group justify-content-center">
+                <div class="flex-grow-4">
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>Categories</option>
+                        <option value="1">Cylinders</option>
+                        <option value="2">Door Locks - Mechanical</option>
+                        <option value="3">Door Closers & Operators</option>
+                        <option value="4">Door Accessories</option>
+                        <option value="5">Keys & Key Accessories</option>
+                        <option value="6">Padlocks & Accessories</option>
+                        <option value="7">Cabinet & Utility Locks</option>
+                        <option value="8">Safes & Safe Locks</option>
+                        <option value="9">Exit Devices</option>
+                        <option value="10">Access Control</option>
+                    </select>
+                </div>
+                <form class="d-flex w-25" method="get" action="/search">
+                    <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item d-flex">
+                    <a class="nav-link" href="/account/registration">
+                        <i class="bi bi-person-bounding-box"></i> | Register
+                    </a>
+                </li>
+
+                <li class="nav-item d-flex">
+                    <a class="nav-link text-dark" href="/cart">
+                        <i class="bi bi-bag"></i> Cart |
+                        <span class="badge bg-secondary">@cartItemCount</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+@code {
+    private int cartItemCount = 0;
+
+    protected override void OnInitialized()
+    {
+        // Logic to fetch the cart item count can be added here
+        cartItemCount = 5; // Example count
+    }
+}
