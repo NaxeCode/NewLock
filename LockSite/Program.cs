@@ -1,10 +1,21 @@
 using LockSite.Components;
+using NewLock.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddSingleton<ProductRepository>();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession();
+
+builder.Services.AddScoped<CartService>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<StripeService>();
+
 
 var app = builder.Build();
 
@@ -23,5 +34,7 @@ app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+app.UseSession();
 
 app.Run();
