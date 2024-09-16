@@ -1,0 +1,95 @@
+@page "/checkout"
+@using NewLock.Models
+@inject NavigationManager NavigationManager
+@inject HttpClient Http
+
+<h2>Checkout</h2>
+
+@if (cart != null && cart.Items.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in cart.Items)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@((item.Quantity * item.Price).ToString("C"))</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td>@cart.TotalPrice.ToString("C")</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <button class="btn btn-primary" @onclick="ProceedToPayment">Proceed to Payment</button>
+}
+else
+{
+    <p>Your cart is empty.</p>
+}
+
+@code {
+    private Cart cart;
+    private string stripePublishableKey = "your-stripe-key"; // This can be injected or retrieved from a service
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Fetch the cart from your backend or service
+        cart = await FetchCartAsync();
+    }
+
+    private async Task<Cart> FetchCartAsync()
+    {
+        // Simulate fetching the cart, replace this with actual service logic
+        return new Cart
+        {
+            Items = new List<CartItem>
+            {
+                new CartItem { ProductName = "Product 1", Quantity = 2, Price = 19.99m },
+                new CartItem { ProductName = "Product 2", Quantity = 1, Price = 39.99m }
+            },
+            TotalPrice = 79.97m
+        };
+    }
+
+    private async Task ProceedToPayment()
+    {
+        try
+        {
+            // Make a POST request to create the Stripe checkout session
+            var response = await Http.PostAsync("/Checkout/CreateCheckoutSession", null);
+            var session = await response.Content.ReadFromJsonAsync<CheckoutSessionResponse>();
+
+            if (session != null)
+            {
+                // Redirect to Stripe's checkout
+                await JS.InvokeVoidAsync("redirectToStripeCheckout", session.Id, stripePublishableKey);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Error during checkout: {ex.Message}");
+        }
+    }
+}
+
+@code {
+    public class CheckoutSessionResponse
+    {
+        public string Id { get; set; }
+    }
+}

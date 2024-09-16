@@ -1,0 +1,61 @@
+@page "/details/{id:int}"
+@using NewLock.Models
+@inject NavigationManager NavigationManager
+
+<h2>@product?.Name</h2>
+
+@if (product != null)
+{
+    <div class="row">
+        <div class="col-md-6">
+            <img src="https://media.idn-inc.com/Photos/@product.Ez.jpg" class="img-fluid" alt="@product.Name">
+        </div>
+        <div class="col-md-6">
+            <h3>Description</h3>
+            <p>@product.Description</p>
+            <h3>Price</h3>
+            <p><strong>$@product.Price.ToString("F2")</strong></p>
+            <div>
+                <input type="number" @bind-value="quantity" min="1" />
+                <button class="btn btn-primary" @onclick="AddToCart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <button class="btn btn-secondary" @onclick="BackToSearch">Back to Search Results</button>
+    </div>
+}
+else
+{
+    <p>Loading...</p>
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+    private Product product;
+    private int quantity = 1;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate fetching the product details by ID
+        product = await FetchProductByIdAsync(id);
+    }
+
+    private async Task<Product> FetchProductByIdAsync(int id)
+    {
+        // Placeholder for actual service or database call
+        return new Product { Id = id, Name = "Sample Product", Price = 49.99m, Description = "A sample product", Ez = "12345" };
+    }
+
+    private void AddToCart()
+    {
+        // Logic to add the product to the cart, possibly using a service
+        Console.WriteLine($"Added {quantity} of {product.Name} to the cart.");
+    }
+
+    private void BackToSearch()
+    {
+        NavigationManager.NavigateTo("/search");
+    }
+}

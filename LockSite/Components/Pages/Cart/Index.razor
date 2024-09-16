@@ -1,0 +1,93 @@
+@page "/cart"
+@using NewLock.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Your Shopping Cart</h2>
+
+@if (cart != null && cart.Items.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in cart.Items)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@item.Quantity</td>
+                    <td>@(item.Price * item.Quantity).ToString("C")</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" @onclick="() => RemoveFromCart(item.ProductId)">Remove</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h4>Total: @cart.TotalPrice.ToString("C")</h4>
+
+    <button class="btn btn-primary" @onclick="ProceedToCheckout">Proceed to Checkout</button>
+}
+else
+{
+    <p>Your cart is empty.</p>
+}
+
+<button class="btn btn-secondary" @onclick="ContinueShopping">Continue Shopping</button>
+
+@code {
+    private Cart cart;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate fetching the cart from the backend or service
+        cart = await FetchCartAsync();
+    }
+
+    private async Task<Cart> FetchCartAsync()
+    {
+        // Replace this with actual API call to fetch the cart
+        return new Cart
+        {
+            Items = new List<CartItem>
+            {
+                new CartItem { ProductId = 1, ProductName = "Product 1", Price = 19.99m, Quantity = 2 },
+                new CartItem { ProductId = 2, ProductName = "Product 2", Price = 39.99m, Quantity = 1 }
+            },
+            TotalPrice = 79.97m
+        };
+    }
+
+    private async Task RemoveFromCart(int productId)
+    {
+        // Replace with actual logic to remove the product from the cart
+        cart.Items.RemoveAll(item => item.ProductId == productId);
+
+        // Optionally, update the backend if needed
+        await UpdateCartAsync();
+    }
+
+    private async Task UpdateCartAsync()
+    {
+        // Simulate an API call to update the cart
+        await Task.Delay(100);
+    }
+
+    private void ProceedToCheckout()
+    {
+        NavigationManager.NavigateTo("/checkout");
+    }
+
+    private void ContinueShopping()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

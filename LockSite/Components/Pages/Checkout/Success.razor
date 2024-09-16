@@ -1,0 +1,38 @@
+@page "/checkout/success"
+@inject NavigationManager NavigationManager
+
+<h2>Payment Successful</h2>
+
+<p>Thank you for your purchase! Your order has been successfully processed.</p>
+
+<p>Order details:</p>
+<ul>
+    <li>Order ID: @orderId</li>
+    <li>Total Amount: @totalAmount.ToString("C")</li>
+</ul>
+
+<button class="btn btn-primary" @onclick="ReturnToHome">Return to Home</button>
+
+@code {
+    [Parameter] public string orderId { get; set; }
+    [Parameter] public decimal totalAmount { get; set; }
+
+    private void ReturnToHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    protected override void OnInitialized()
+    {
+        // Simulate fetching order details from service or passed parameters
+        if (string.IsNullOrEmpty(orderId))
+        {
+            orderId = "12345"; // Replace this with actual data
+        }
+
+        if (totalAmount == 0)
+        {
+            totalAmount = 79.97m; // Replace this with actual total amount
+        }
+    }
+}

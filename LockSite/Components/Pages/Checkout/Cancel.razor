@@ -1,0 +1,15 @@
+@page "/checkout/cancel"
+@inject NavigationManager NavigationManager
+
+<h2>Payment Cancelled</h2>
+
+<p>Your payment has been cancelled. No charges were made.</p>
+
+<button class="btn btn-primary" @onclick="ReturnToCart">Return to Cart</button>
+
+@code {
+    private void ReturnToCart()
+    {
+        NavigationManager.NavigateTo("/cart");
+    }
+}
