@@ -7,7 +7,7 @@
 @if (products != null && products.Any())
 {
     <div class="row">
-        @foreach (var product in products)
+    @foreach (var product in products)
         {
             <div class="col-md-3 mb-4">
                 <div class="card d-flex justify-content-center" style="background-color: var(--bg-contrast-color);">
@@ -51,8 +51,8 @@ else
         // Placeholder for actual implementation
         return new List<Product>
 {
-new Product { Id = 1, Name = "Product 1", Price = 29.99m, Ez = "12345" },
-new Product { Id = 2, Name = "Product 2", Price = 39.99m, Ez = "54321" }
+new Product { Id = 1, Name = "Product 1", Price = 29.99m, Ez = "12345", Description = "Just testing" },
+new Product { Id = 2, Name = "Product 2", Price = 39.99m, Ez = "54321", Description = "Just testing" }
 };
     }
 
