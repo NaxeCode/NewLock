@@ -56,14 +56,14 @@ else
     {
         // Simulate fetching the cart, replace this with actual service logic
         return new Cart
-        {
-            Items = new List<CartItem>
             {
-                new CartItem { ProductName = "Product 1", Quantity = 2, Price = 19.99m },
-                new CartItem { ProductName = "Product 2", Quantity = 1, Price = 39.99m }
-            },
-            TotalPrice = 79.97m
-        };
+                Items = new List<CartItem>
+{
+new CartItem { ProductName = "Product 1", Quantity = 2, Price = 19.99m },
+new CartItem { ProductName = "Product 2", Quantity = 1, Price = 39.99m }
+},
+            @* TotalPrice = 79.97m *@
+};
     }
 
     private async Task ProceedToPayment()
@@ -76,8 +76,8 @@ else
 
             if (session != null)
             {
-                // Redirect to Stripe's checkout
-                await JS.InvokeVoidAsync("redirectToStripeCheckout", session.Id, stripePublishableKey);
+            // Redirect to Stripe's checkout
+                @* await JS.InvokeVoidAsync("redirectToStripeCheckout", session.Id, stripePublishableKey); *@
             }
         }
         catch (Exception ex)

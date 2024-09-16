@@ -6,34 +6,34 @@
 
 @if (products != null && products.Any())
 {
-        <div class="row">
+    <div class="row">
         @foreach (var product in products)
         {
-                    <div class="col-md-3 mb-4">
-                        <div class="card d-flex justify-content-center" style="background-color: var(--bg-contrast-color);">
-                            <img src="https://media.idn-inc.com/Photos/@product.Ez.jpg"
-                                 class="card-img-top img-fluid w-75" alt="@product.Name">
-                            <div class="card-body">
-                                <h5 class="card-title">@product.Name</h5>
-                                <p class="card-text"><strong>Price: $@product.Price.ToString("F2")</strong></p>
-                                <p class="card-text">
-                                    <a class="link-offset-2 link-underline-danger link-underline-opacity-0" href="#">
-                                        EZ: #@product.Ez.ToString()
-                                    </a>
-                                </p>
+            <div class="col-md-3 mb-4">
+                <div class="card d-flex justify-content-center" style="background-color: var(--bg-contrast-color);">
+                    <img src="https://media.idn-inc.com/Photos/@(product.Ez).jpg" class="card-img-top img-fluid w-75"
+                        alt="@product.Name">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text"><strong>Price: $@product.Price.ToString("F2")</strong></p>
+                        <p class="card-text">
+                            <a class="link-offset-2 link-underline-danger link-underline-opacity-0" href="#">
+                                EZ: #@product.Ez.ToString()
+                            </a>
+                        </p>
 
-                                <button class="btn btn-primary" @onclick="() => ViewDetails(product.Id)">
-                                    View Details
-                                </button>
-                            </div>
-                        </div>
+                        <button class="btn btn-primary" @onclick="() => ViewDetails(product.Id)">
+                            View Details
+                        </button>
                     </div>
+                </div>
+            </div>
         }
-        </div>
+    </div>
 }
 else
 {
-        <p>No results found.</p>
+    <p>No results found.</p>
 }
 
 @code {
@@ -50,10 +50,10 @@ else
         // Fetch products from your backend or service
         // Placeholder for actual implementation
         return new List<Product>
-        {
-            new Product { Id = 1, Name = "Product 1", Price = 29.99m, Ez = "12345" },
-            new Product { Id = 2, Name = "Product 2", Price = 39.99m, Ez = "54321" }
-        };
+{
+new Product { Id = 1, Name = "Product 1", Price = 29.99m, Ez = "12345" },
+new Product { Id = 2, Name = "Product 2", Price = 39.99m, Ez = "54321" }
+};
     }
 
     private void ViewDetails(int id)

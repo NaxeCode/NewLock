@@ -56,14 +56,14 @@ else
     {
         // Replace this with actual API call to fetch the cart
         return new Cart
-        {
-            Items = new List<CartItem>
             {
-                new CartItem { ProductId = 1, ProductName = "Product 1", Price = 19.99m, Quantity = 2 },
-                new CartItem { ProductId = 2, ProductName = "Product 2", Price = 39.99m, Quantity = 1 }
-            },
-            TotalPrice = 79.97m
-        };
+                Items = new List<CartItem>
+{
+new CartItem { ProductId = 1, ProductName = "Product 1", Price = 19.99m, Quantity = 2 },
+new CartItem { ProductId = 2, ProductName = "Product 2", Price = 39.99m, Quantity = 1 }
+},
+            @* TotalPrice = 79.97m *@
+};
     }
 
     private async Task RemoveFromCart(int productId)

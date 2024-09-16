@@ -7,7 +7,7 @@ namespace NewLock.Models
     public class CartItem
     {
         [JsonInclude]
-        public string ProductId { get; set; }
+        public int ProductId { get; set; }
 
         [JsonInclude]
         public string ProductName { get; set; }
@@ -46,11 +46,11 @@ namespace NewLock.Models
 
         public void RemoveItem(string productId)
         {
-            var item = Items.FirstOrDefault(i => i.ProductId == productId);
-            if (item != null)
-            {
-                Items.Remove(item);
-            }
+            /*  var item = Items.FirstOrDefault(i => i.ProductId == productId);
+             if (item != null)
+             {
+                 Items.Remove(item);
+             } */
         }
 
         public decimal TotalPrice => Items.Sum(item => item.Price * item.Quantity);
