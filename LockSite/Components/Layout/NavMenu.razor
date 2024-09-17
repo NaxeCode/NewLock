@@ -1,4 +1,6 @@
-﻿<header>
+﻿@inject NavigationManager NavigationManager
+
+<header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
         <div class="container-fluid">
             <!-- Affordable Lock Logo, Link to Home -->
@@ -20,11 +22,11 @@
                         <option value="10">Access Control</option>
                     </select>
                 </div>
-                <form class="d-flex w-25" method="get" action="/search">
-                    <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search"
-                        aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" @onclick="Search">Search</button>
-                </form>
+                <div class="d-flex w-25">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        @bind-value="inputVal" @onkeyup=EnterPressed>
+                    <button class="btn btn-outline-success my-2 my-sm-0" @onclick=Search>Search</button>
+                </div>
             </div>
 
             <ul class="navbar-nav ms-auto">
@@ -46,6 +48,7 @@
 </header>
 
 @code {
+    private string inputVal = "";
     private int cartItemCount = 0;
 
     protected override void OnInitialized()
@@ -54,13 +57,21 @@
         cartItemCount = 5; // Example count
     }
 
+    private void EnterPressed(KeyboardEventArgs args)
+    {
+        if (args.Code is "Enter" or "NumpadEnter")
+        {
+            Search();
+        }
+    }
+
     public void Search()
     {
-        //if (string.IsNullOrWhiteSpace(query))
-        //{
-        // return View(new List<Product>());
-        //}
-        //
-        //var results = _productRepository.Search(query);
+        if (!string.IsNullOrWhiteSpace(inputVal))
+        {
+            NavigationManager.NavigateTo($"/search/{inputVal}");
+        }
+
+        @* var results = _productRepository.Search(query); *@
     }
 }

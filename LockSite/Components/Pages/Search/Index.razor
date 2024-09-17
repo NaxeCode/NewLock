@@ -1,13 +1,15 @@
-@page "/search"
+@page "/search/{searchVal}"
 @using NewLock.Models
+@using NewLock.Services
 @inject NavigationManager NavigationManager
+@inject ProductRepository ProductRepo
 
 <h2>Search Results</h2>
 
 @if (products != null && products.Any())
 {
     <div class="row">
-    @foreach (var product in products)
+        @foreach (var product in products)
         {
             <div class="col-md-3 mb-4">
                 <div class="card d-flex justify-content-center" style="background-color: var(--bg-contrast-color);">
@@ -39,21 +41,18 @@ else
 @code {
     private IEnumerable<Product> products;
 
-    protected override async Task OnInitializedAsync()
+    [Parameter]
+    public string searchVal { get; set; }
+
+    protected override void OnParametersSet()
     {
-        // Simulate fetching products here, or fetch them from a service
-        products = await FetchProductsAsync();
+
     }
 
-    private async Task<IEnumerable<Product>> FetchProductsAsync()
+    protected override void OnInitialized()
     {
-        // Fetch products from your backend or service
-        // Placeholder for actual implementation
-        return new List<Product>
-{
-new Product { Id = 1, Name = "Product 1", Price = 29.99m, Ez = "12345", Description = "Just testing" },
-new Product { Id = 2, Name = "Product 2", Price = 39.99m, Ez = "54321", Description = "Just testing" }
-};
+        // Simulate fetching products here, or fetch them from a service
+        products = ProductRepo.Search(searchVal);
     }
 
     private void ViewDetails(int id)
