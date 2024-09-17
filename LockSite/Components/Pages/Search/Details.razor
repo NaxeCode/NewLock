@@ -6,9 +6,13 @@
 
 <h2>@product?.Name</h2>
 
-@if (product != null)
+@if (product == null)
 {
-    <div class="row">
+    <p>Loading...</p>
+    return;
+}
+
+<div class="row">
     <div class="col-md-6">
         <img src="https://media.idn-inc.com/Photos/@(product.Ez).jpg" class="img-fluid" alt="@product.Name">
     </div>
@@ -24,21 +28,17 @@
     </div>
 </div>
 
-    <div class="mt-4">
-        <button class="btn btn-secondary" @onclick="BackToSearch">Back to Search Results</button>
-    </div>
-}
-else
-{
-    <p>Loading...</p>
-}
+<div class="mt-4">
+    <button class="btn btn-secondary" @onclick="BackToSearch">Back to Search Results</button>
+</div>
+
 
 @code {
     [Parameter] public int id { get; set; }
     private Product product;
     private int quantity = 1;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         // Simulate fetching the product details by ID
         product = ProductRepo.GetById(id);
