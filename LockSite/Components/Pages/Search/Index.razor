@@ -9,7 +9,7 @@
 @if (products != null && products.Any())
 {
     <div class="row">
-        @foreach (var product in products)
+    @foreach (var product in products)
         {
             <div class="col-md-3 mb-4">
                 <div class="card d-flex justify-content-center" style="background-color: var(--bg-contrast-color);">
@@ -46,7 +46,7 @@ else
 
     protected override void OnParametersSet()
     {
-
+        OnInitialized();
     }
 
     protected override void OnInitialized()
