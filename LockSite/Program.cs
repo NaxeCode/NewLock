@@ -3,6 +3,9 @@ using NewLock.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Blazor Bootstrap Component Library
+builder.Services.AddBlazorBootstrap();
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
