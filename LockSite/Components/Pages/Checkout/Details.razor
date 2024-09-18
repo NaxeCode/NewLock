@@ -1,4 +1,4 @@
-@page "/checkout"
+@page "/checkout/details"
 @using NewLock.Models
 @inject NavigationManager NavigationManager
 @inject HttpClient Http
@@ -8,16 +8,16 @@
 @if (cart != null && cart.Items.Any())
 {
     <table class="table">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in cart.Items)
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in cart.Items)
             {
                 <tr>
                     <td>@item.ProductName</td>
