@@ -1,137 +1,84 @@
-<div class="text-center">
-    <div class="row row-cols-1 row-cols-md-3">
-        <div class="col-mb-3 ">
-            <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
-                <img src="https://www.affordablelock.com/wp-content/uploads/2019/10/safes-1.jpg" alt="placeholder" />
-                <CardBody>
-                    <CardTitle>Safes</CardTitle>
-                    <CardText>Be ready for the unexpected. Protect your valuables with a high-security safe.
-                    </CardText>
-                    <CardText Class="text-muted">Last updated 3 mins ago</CardText>
-                </CardBody>
-            </Card>
-        </div>
+<div class="container text-center">
+    <div class="row">
 
-        <div class="col-mb-4">
-            <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
-                <img src="https://www.affordablelock.com/wp-content/uploads/2019/10/Access-Control-Systems-11.jpg"
-                    alt="placeholder" />
-                <CardBody>
-                    <CardTitle>Access Control Systems</CardTitle>
-                    <CardText>Affordable, easy-to-use security with features like DVR, email alerts, and automated
-                        user
-                        controls—ideal for smaller businesses.
-                    </CardText>
-                    <CardText Class="text-muted">Last updated 3 mins ago</CardText>
-                </CardBody>
-            </Card>
-        </div>
+        @foreach (var card in cards)
+        {
+            <div class="col">
+                <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
+                    <img src=@card.Image alt="placeholder" />
+                    <CardBody>
+                        <CardTitle>@card.Title</CardTitle>
+                        <CardText>@card.Desc</CardText>
+                    </CardBody>
+                </Card>
+            </div>
+        }
 
-        <div class="col-mb-4">
-            <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
-                <img src="https://www.affordablelock.com/wp-content/uploads/2019/10/Security-Cameras-11.jpg"
-                    alt="placeholder" />
-                <CardBody>
-                    <CardTitle>Security Cameras</CardTitle>
-                    <CardText>Keep an eye on your home inside and out, anytime, with smartphone-accessible security
-                        cameras
-                        from Affordable Lock & Security Solutions.
-                    </CardText>
-                    <CardText Class="text-muted">Last updated 3 mins ago</CardText>
-                </CardBody>
-            </Card>
-        </div>
-
-        <div class="col-mb-4">
-            <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
-                <img src="https://www.affordablelock.com/wp-content/uploads/2019/07/Burglar-Alarms-1.jpg"
-                    alt="placeholder" />
-                <CardBody>
-                    <CardTitle>Burglar Alarms</CardTitle>
-                    <CardText>Protect your home or business with reliable burglar alarms and CCTV systems from
-                        Tampa's
-                        own
-                        Affordable Lock & Security Solutions.
-                    </CardText>
-                    <CardText Class="text-muted">Last updated 3 mins ago</CardText>
-                </CardBody>
-            </Card>
-        </div>
-
-        <div class="col-mb-4">
-            <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
-                <img src="https://www.affordablelock.com/wp-content/uploads/2019/07/Home-Automation-1.jpg"
-                    alt="placeholder" />
-                <CardBody>
-                    <CardTitle>Home Automation</CardTitle>
-                    <CardText>Affordable Lock & Security Solutions offers home automation services across Tampa,
-                        Palm
-                        Harbor, St. Petersburg, and beyond.
-                    </CardText>
-                    <CardText Class="text-muted">Last updated 3 mins ago</CardText>
-                </CardBody>
-            </Card>
-        </div>
-
-        <div class="col-mb-4">
-            <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
-                <img src="https://www.affordablelock.com/wp-content/uploads/2019/09/Full-Service-Locksmith-1.jpg"
-                    alt="placeholder" />
-                <CardBody>
-                    <CardTitle>Full Service Locksmith</CardTitle>
-                    <CardText>As Tampa Bay's largest Medeco distributor, we provide top-quality locks, cylinders,
-                        and
-                        key-cutting services. Trusted, we're locksmiths serving Ocala and Central Florida.
-                    </CardText>
-                    <CardText Class="text-muted">Last updated 3 mins ago</CardText>
-                </CardBody>
-            </Card>
-        </div>
-
-        <div class="col-mb-4">
-            <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
-                <img src="https://www.affordablelock.com/wp-content/uploads/2019/11/people-leaving-hotel-5FLX2RY1-1.jpg"
-                    alt="placeholder" />
-                <CardBody>
-                    <CardTitle>Automatic Door Operator</CardTitle>
-                    <CardText>Upgrade any manual door with an automatic operator—perfect for commercial, retail, or
-                        industrial spaces. Effortless and convenient.
-                    </CardText>
-                    <CardText Class="text-muted">Last updated 3 mins ago</CardText>
-                </CardBody>
-            </Card>
-        </div>
-
-        <div class="col-mb-4">
-            <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
-                <img src="https://www.affordablelock.com/wp-content/uploads/2019/10/Car-remotes-Dealer-keys-1.jpg"
-                    alt="placeholder" />
-                <CardBody>
-                    <CardTitle>Car Remotes and Fob Keys</CardTitle>
-                    <CardText>Lost your car key or remote? Affordable Lock & Security Solutions has you covered with
-                        quick
-                        replacements to keep you moving.
-                    </CardText>
-                    <CardText Class="text-muted">Last updated 3 mins ago</CardText>
-                </CardBody>
-            </Card>
-        </div>
-
-        <div class="col-mb-4">
-            <Card Color="CardColor.Danger" TextAlignment="Alignment.Center" Class="mb-4" Style="width:18rem;">
-                <img src="https://affordablelock.com/wp-content/uploads/2020/07/commercial-doors-in-Apopka.jpg"
-                    alt="placeholder" />
-                <CardBody>
-                    <CardTitle>High Security Locks</CardTitle>
-                    <CardText>Worried about break-ins? Protect your property with high-security door locks for peace
-                        of
-                        mind.
-                    </CardText>
-                    <CardText Class="text-muted">Last updated 3 mins ago</CardText>
-                </CardBody>
-            </Card>
-        </div>
 
         <!-- Repeat this block for each card to keep the 3x9 layout -->
     </div>
 </div>
+
+@code {
+    private class CardModel
+    {
+        public string Title { get; set; }
+        public string Desc { get; set; }
+        public string Image { get; set; }
+
+        public CardModel(string title, string description, string image)
+        {
+            Title = title;
+            Desc = description;
+            Image = image;
+        }
+    }
+
+    private List<CardModel> cards = [];
+
+    protected override void OnInitialized()
+    {
+        InitCards();
+    }
+
+    private void InitCards()
+    {
+
+        var data = new List<(string title, string description, string image)>
+        {
+           ("Safes",
+            "Be ready for the unexpected. Protect your valuables with a high-security safe.",
+            "https://www.affordablelock.com/wp-content/uploads/2019/10/safes-1.jpg"),
+           ("Access Control Systems",
+            "Affordable, easy-to-use security with features like DVR, email alerts, and automated user controls—ideal for smaller businesses.",
+            "https://www.affordablelock.com/wp-content/uploads/2019/10/Access-Control-Systems-11.jpg"),
+           ("Security Cameras",
+            "Keep an eye on your home inside and out, anytime, with smartphone-accessible cameras from Affordable Lock & Security Solutions",
+            "https://www.affordablelock.com/wp-content/uploads/2019/10/Security-Cameras-11.jpg"),
+           ("Burglar Alarms",
+            "Protect your home or business with reliable burglar alarms and CCTV systems from Tampa's own Affordable Lock & Security Solutions",
+            "https://www.affordablelock.com/wp-content/uploads/2019/07/Burglar-Alarms-1.jpg"),
+           ("Home Automation",
+            "Affordable Lock & Security Solutions offers home automation services across Tampa, Palm Harbor, St. Petersburg, and beyond.",
+            "https://www.affordablelock.com/wp-content/uploads/2019/07/Home-Automation-1.jpg"),
+           ("Full Service Locksmith",
+            "As Tampa Bay's largest Medeco distributor, we provide top-quality locks, cylinders, and key-cutting services. Trusted, we're locksmiths serving Ocala and Central Florida.",
+            "https://www.affordablelock.com/wp-content/uploads/2019/09/Full-Service-Locksmith-1.jpg"),
+           ("Automatic Door Operator",
+            "Upgrade any manual door with an automatic operator—perfect for commercial, retail, or industrial spaces. Effortless and convenient.",
+            "https://www.affordablelock.com/wp-content/uploads/2019/11/people-leaving-hotel-5FLX2RY1-1.jpg"),
+           ("Car Remotes and Fob Keys",
+            "Lost your car key or remote? Affordable Lock & Security Solutions has you covered with quick replacements to keep you moving.",
+            "https://www.affordablelock.com/wp-content/uploads/2019/10/Car-remotes-Dealer-keys-1.jpg"),
+           ("High Security Locks",
+            "Worried about break-ins? Protect your property with high-security door locks for peace of mind.",
+            "https://affordablelock.com/wp-content/uploads/2020/07/commercial-doors-in-Apopka.jpg"),
+        };
+
+        foreach (var item in data)
+        {
+            cards.Add(new CardModel(item.title, item.description, item.image));
+        }
+
+    }
+}
